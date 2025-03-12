@@ -1,0 +1,7 @@
+# Archivos temporales de LaTeX
+*.aux
+*.log
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.pdf  # Evita subir PDFs generados automáticamente
