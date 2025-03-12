@@ -1,0 +1,606 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{geometry}
+
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=25mm,
+	bottom=25mm,
+}
+ 
+\title{Formulario de Probabilidad y Estadística}
+\author{Expresso}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{multicols}{2}
+		
+		\section*{Tablas de Distribución de Frecuencia para Datos Cualitativos}
+		
+		\subsection*{Frecuencia ($f$)}
+		\textbf{Fórmula:}
+		\[
+		f_i = \text{Número de veces que aparece la categoría } i
+		\]
+		\textbf{Ejemplo Práctico:}  
+		En una encuesta, se registraron las preferencias de 50 personas por 3 sabores de helado: Vainilla, Chocolate y Fresa. Supongamos que Vainilla fue elegido 20 veces, Chocolate 15 veces y Fresa 15 veces.
+		\[
+		f_{\text{Vainilla}} = 20, \quad f_{\text{Chocolate}} = 15, \quad f_{\text{Fresa}} = 15
+		\]
+		
+		\vspace{0.5cm}
+		
+		\subsection*{Frecuencia Relativa ($f_r$)}
+		\textbf{Fórmula:}
+		\[
+		f_r = \frac{f_i}{N}
+		\]
+		donde \( N \) es el tamaño total de la muestra.
+		
+		\textbf{Ejemplo Práctico:}  
+		Con \( N = 50 \):
+		
+		\begin{align*}
+		f_r(\text{Vainilla}) = \frac{20}{50} = 0.4 \\
+		\\
+		f_r(\text{Chocolate}) = \frac{15}{50} = 0.3 \\
+		\\
+		f_r(\text{Fresa}) = \frac{15}{50} = 0.3 \\
+		\end{align*}
+		
+		\vspace{0.5cm}
+		
+		\subsection*{Frecuencia Porcentual ($f_p$)}
+		\textbf{Fórmula:}
+		\[
+		f_p = f_r \times 100\%
+		\]
+		\textbf{Ejemplo Práctico:}  
+		\begin{align*}
+			f_p(\text{Vainilla}) &= 0.4 \times 100\% = 40\%, \\
+			f_p(\text{Chocolate}) &= 0.3 \times 100\% = 30\%, \\
+			f_p(\text{Fresa}) &= 0.3 \times 100\% = 30\%
+		\end{align*}
+
+		
+		\subsection*{Frecuencia Acumulada ($F$)}
+		\textbf{Fórmula:}
+		\[
+		F_i = \sum_{j=1}^{i} f_j
+		\]
+		\textbf{Ejemplo Práctico:}  
+		\begin{align*}
+			F(\text{Vainilla}) = 20 \\
+			F(\text{Chocolate}) = 20 + 15 = 35 \\
+			F(\text{Fresa}) = 35 + 15 = 50 \\
+		\end{align*}
+		
+		\subsection*{Frecuencia Acumulada Relativa ($F_r$)}
+		\textbf{Fórmula:}
+		\[
+		F_r = \frac{F_i}{N}
+		\]
+		\textbf{Ejemplo Práctico:}  
+		\begin{align*}
+			F_r(\text{Vainilla}) = \frac{20}{50} = 0.4 \\  F_r(\text{Chocolate}) = \frac{35}{50} = 0.7 \\
+			F_r(\text{Fresa}) = \frac{50}{50} = 1.0 \\
+		\end{align*}
+		
+		
+		
+		\subsection*{Frecuencia Acumulada Porcentual ($F_p$)}
+		\textbf{Fórmula:}
+		\[
+		F_p = F_r \times 100\%
+		\]
+		\textbf{Ejemplo Práctico:}  
+		\begin{align*}
+			F_p(\text{Vainilla}) = 0.4 \times 100\% = 40\%, \\ F_p(\text{Chocolate}) = 0.7 \times 100\% = 70\% \\ F_p(\text{Fresa}) = 1.0 \times 100\% = 100\%
+		\end{align*}
+		
+		\subsection*{Grados}
+		\textbf{Fórmula:}
+		\[
+		\text{Grados} = \frac{360^\circ}{N}
+		\]
+		donde \( N \) es el tamaño total de la muestra.
+		\textbf{Ejemplo Práctico:}  
+		Para \( N = 50 \):
+		\[
+		\text{Grados} = \frac{360^\circ}{50} = 7.2^\circ \text{ por persona}
+		\]
+		
+		\section*{Tablas de Distribución de Frecuencia para Datos Cuantitativos}
+		
+		\subsection*{Intervalo de Clase}
+		\textbf{Fórmula:}
+		\[
+		\text{Intervalo de Clase} = [a, b)
+		\]
+		donde \( a \) es el límite inferior y \( b \) el límite superior de la clase.
+		\textbf{Ejemplo Práctico:}  
+		Si las edades de un grupo de personas van de 20 a 40 años, un intervalo de clase podría ser \([20, 30)\).
+		
+		\subsection*{Frecuencia ($f$)}
+		\textbf{Fórmula:}
+		\[
+		f_i = \text{Número de observaciones en la clase } i
+		\]
+		\textbf{Ejemplo Práctico:}  
+		En el intervalo \([20, 30)\) hay 15 personas.
+		
+		\subsection*{Frecuencia Relativa ($f_r$)}
+		\textbf{Fórmula:}
+		\[
+		f_r = \frac{f_i}{N}
+		\]
+		\textbf{Ejemplo Práctico:}  
+		Con \( N = 50 \):
+		\[
+		f_r = \frac{15}{50} = 0.3
+		\]
+		
+		\subsection*{Frecuencia Porcentual ($f_p$)}
+		\textbf{Fórmula:}
+		\[
+		f_p = f_r \times 100\%
+		\]
+		\textbf{Ejemplo Práctico:}  
+		\[
+		f_p = 0.3 \times 100\% = 30\%
+		\]
+		
+		\subsection*{Frecuencia Acumulada ($F$)}
+		\textbf{Fórmula:}
+		\[
+		F_i = \sum_{j=1}^{i} f_j
+		\]
+		\textbf{Ejemplo Práctico:}  
+		Si el siguiente intervalo \([30, 40)\) tiene 10 personas:
+		\[
+		F(\text{Hasta } 30) = 15, \quad F(\text{Hasta } 40) = 15 + 10 = 25
+		\]
+		
+		\subsection*{Frecuencia Acumulada Relativa ($F_r$)}
+		\textbf{Fórmula:}
+		\[
+		F_r = \frac{F_i}{N}
+		\]
+		\textbf{Ejemplo Práctico:}  
+		\[
+		F_r(\text{Hasta } 40) = \frac{25}{50} = 0.5
+		\]
+		
+		\subsection*{Frecuencia Acumulada Porcentual ($F_p$)}
+		\textbf{Fórmula:}
+		\[
+		F_p = F_r \times 100\%
+		\]
+		\textbf{Ejemplo Práctico:}  
+		\[
+		F_p(\text{Hasta } 40) = 0.5 \times 100\% = 50\%
+		\]
+		
+		\subsection*{Marca de Clase ($\overline{x}$)}
+		\textbf{Fórmula:}
+		\[
+		\overline{x}_i = \frac{a_i + b_i}{2}
+		\]
+		\textbf{Ejemplo Práctico:}  
+		Para el intervalo \([20, 30)\):
+		\[
+		\overline{x} = \frac{20 + 30}{2} = 25
+		\]
+		
+		\section*{Medidas de Tendencia Central}
+		
+		\subsection*{Media ($\bar{x}$)}
+		\textbf{Fórmula:}
+		\[
+		\bar{x} = \frac{1}{N} \sum_{i=1}^{N} x_i
+		\]
+		donde \( x_i \) son los valores individuales y \( N \) es el número total de observaciones.
+		\textbf{Ejemplo Práctico:}  
+		Valores: 5, 7, 3, 8, 6  
+		\[
+		\bar{x} = \frac{5 + 7 + 3 + 8 + 6}{5} = \frac{29}{5} = 5.8
+		\]
+		
+		\subsection*{Mediana}
+		\textbf{Definición:} Valor que divide al conjunto de datos ordenados en dos partes iguales.
+		\textbf{Ejemplo Práctico:}  
+		Valores ordenados: 3, 5, 7, 8, 9  
+		\[
+		\text{Mediana} = 7 \quad (\text{valor central})
+		\]
+		Para un conjunto con número par de observaciones:  
+		Valores ordenados: 3, 5, 7, 8  
+		\[
+		\text{Mediana} = \frac{5 + 7}{2} = 6
+		\]
+		
+		\subsection*{Moda}
+		\textbf{Definición:} Valor que aparece con mayor frecuencia en el conjunto de datos.
+		\textbf{Ejemplo Práctico:}  
+		Valores: 2, 4, 4, 5, 6  
+		\[
+		\text{Moda} = 4 \quad (\text{aparece dos veces})
+		\]
+		
+		\section*{Medidas de Dispersión y Variación}
+		
+		\subsection*{Rango ($R$)}
+		\textbf{Fórmula:}
+		\[
+		R = X_{\text{máx}} - X_{\text{mín}}
+		\]
+		donde \( X_{\text{máx}} \) es el valor máximo y \( X_{\text{mín}} \) es el valor mínimo.
+		\textbf{Ejemplo Práctico:}  
+		Valores: 3, 5, 7, 8, 9  
+		\[
+		R = 9 - 3 = 6
+		\]
+		
+
+		
+		\subsection*{Desviación Estándar}
+		
+		\subsubsection*{Poblacional ($\sigma$)}
+		\textbf{Fórmula:}
+		\[
+		\sigma = \sqrt{\sigma^2}
+		\]
+		\textbf{Ejemplo Práctico:}  
+		\[
+		\sigma = \sqrt{1.76} \approx 1.33
+		\]
+		
+		\subsubsection*{Muestral ($s$)}
+		\textbf{Fórmula:}
+		\[
+		s = \sqrt{s^2}
+		\]
+		\textbf{Ejemplo Práctico:}  
+		\[
+		s = \sqrt{2.2} \approx 1.48
+		\]
+		
+		\subsection*{Coeficiente de Variación ($CV$)}
+		\textbf{Fórmula:}
+		\[
+		CV = \left( \frac{\sigma}{\mu} \right) \times 100\%
+		\]
+		donde \( \mu \) es la media poblacional.
+		\textbf{Ejemplo Práctico:}  
+		Con \( \sigma = 1.33 \) y \( \mu = 4.2 \):
+		\[
+		CV = \left( \frac{1.33}{4.2} \right) \times 100\% \approx 31.67\%
+		\]
+		
+		\section*{Medidas de Localización}
+		
+		\subsection*{Percentiles ($P_k$)}
+		\textbf{Fórmula Aproximada:}
+		\[
+		P_k = \frac{k}{100} \times (N + 1)
+		\]
+		donde \( k \) es el percentil deseado.
+		\textbf{Ejemplo Práctico:}  
+		Para el 25º percentil (\( P_{25} \)) en un conjunto de 5 datos:
+		\[
+		P_{25} = \frac{25}{100} \times (5 + 1) = 0.25 \times 6 = 1.5
+		\]
+		Esto significa que \( P_{25} \) está entre el primer y segundo valor de los datos ordenados.
+		
+		\subsection*{Cuartiles}
+		\begin{itemize}
+			\item \textbf{Primer Cuartil (Q1)}: 25º percentil.
+			\item \textbf{Segundo Cuartil (Q2)}: 50º percentil (Mediana).
+			\item \textbf{Tercer Cuartil (Q3)}: 75º percentil.
+		\end{itemize}
+		\textbf{Ejemplo Práctico:}  
+		Con los datos ordenados: 3, 5, 7, 8, 9  
+		\[
+		Q1 = 5, \quad Q2 = 7, \quad Q3 = 8
+		\]
+		
+		\subsection*{Rango Intercuartílico (RIC)}
+		\textbf{Fórmula:}
+		\[
+		RIC = Q3 - Q1
+		\]
+		\textbf{Ejemplo Práctico:}  
+		\[
+		RIC = 8 - 5 = 3
+		\]
+		
+	\end{multicols}
+	
+	
+	\newpage
+	
+	\subsection*{Varianza}
+	
+	\subsubsection*{Poblacional ($\sigma^2$)}
+	\textbf{Fórmula:}
+	\[
+	\sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2
+	\]
+	donde \( \mu \) es la media poblacional.
+	\textbf{Ejemplo Práctico:}  
+	Valores: 2, 4, 4, 5, 6  
+	\[
+	\mu = \frac{2 + 4 + 4 + 5 + 6}{5} = 4.2
+	\]
+	\[
+	\sigma^2 = \frac{(2-4.2)^2 + (4-4.2)^2 + (4-4.2)^2 + (5-4.2)^2 + (6-4.2)^2}{5} = \frac{4.84 + 0.04 + 0.04 + 0.64 + 3.24}{5} = \frac{8.8}{5} = 1.76
+	\]
+	
+	\subsubsection*{Muestral ($s^2$)}
+	\textbf{Fórmula:}
+	\[
+	s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2
+	\]
+	donde \( \bar{x} \) es la media muestral.
+	\textbf{Ejemplo Práctico:}  
+	Valores: 2, 4, 4, 5, 6  
+	\[
+	\bar{x} = 4.2
+	\]
+	\[
+	s^2 = \frac{(2-4.2)^2 + (4-4.2)^2 + (4-4.2)^2 + (5-4.2)^2 + (6-4.2)^2}{5-1} = \frac{4.84 + 0.04 + 0.04 + 0.64 + 3.24}{4} = \frac{8.8}{4} = 2.2
+	\]
+	
+	\vspace{1cm}
+	
+	\begin{multicols}{2}
+		\section*{Complemento de un Evento}
+		
+		\subsection*{Fórmula}
+		\[
+		P(A') = 1 - P(A)
+		\]
+		\textbf{Ejemplo Práctico:}  
+		Si la probabilidad de que llueva mañana es \( P(\text{lluvia}) = 0.3 \), entonces la probabilidad de que no llueva es:
+		\[
+		P(\text{no lluvia}) = 1 - 0.3 = 0.7
+		\]
+		
+		\section*{Ley Aditiva}
+		
+		\subsection*{Fórmula}
+		\[
+		P(A \cup B) = P(A) + P(B) - P(A \cap B)
+		\]
+		\textbf{Ejemplo Práctico:}  
+		En una clase, el 40\% de los estudiantes son hombres (\( P(H) = 0.4 \)) y el 30\% son mayores de 18 años (\( P(M) = 0.3 \)). Si el 10\% son hombres mayores de 18 años (\( P(H \cap M) = 0.1 \)), entonces la probabilidad de que un estudiante sea hombre o mayor de 18 años es:
+		\[
+		P(H \cup M) = 0.4 + 0.3 - 0.1 = 0.6
+		\]
+		
+		\section*{Eventos Mutuamente Excluyentes}
+		
+		\subsection*{Definición y Fórmula}
+		Dos eventos \( A \) y \( B \) son mutuamente excluyentes si no pueden ocurrir simultáneamente, es decir, \( P(A \cap B) = 0 \).  
+		En este caso, la ley aditiva se simplifica a:
+		\[
+		P(A \cup B) = P(A) + P(B)
+		\]
+		\textbf{Ejemplo Práctico:}  
+		Al lanzar un dado, los eventos "obtener un 2" y "obtener un 5" son mutuamente excluyentes.  
+		\[
+		P(2 \cup 5) = P(2) + P(5) = \frac{1}{6} + \frac{1}{6} = \frac{2}{6} = \frac{1}{3}
+		\]
+		
+		\section*{Probabilidad Condicional}
+		
+		\subsection*{Fórmula}
+		\[
+		P(A|B) = \frac{P(A \cap B)}{P(B)}
+		\]
+		\textbf{Ejemplo Práctico:}  
+		En una baraja de 52 cartas, ¿cuál es la probabilidad de que una carta sea un as dado que ya sabemos que es una figura (rey, reina o sota)?  
+		\[
+		P(\text{As}|\text{Figura}) = \frac{P(\text{As} \cap \text{Figura})}{P(\text{Figura})} = \frac{0}{\frac{12}{52}} = 0
+		\]
+		(Nota: No hay cartas que sean simultáneamente un as y una figura, por lo que la probabilidad es 0).
+		
+		\section*{Ley Multiplicativa}
+		
+		\subsection*{Fórmula}
+		\[
+		P(A \cap B) = P(A) \times P(B|A)
+		\]
+		\textbf{Ejemplo Práctico:}  
+		Supongamos que la probabilidad de que una persona sea fumadora es \( P(F) = 0.2 \) y la probabilidad de que una fumadora desarrolle cáncer de pulmón es \( P(C|F) = 0.3 \). Entonces, la probabilidad de que una persona sea fumadora y desarrolle cáncer de pulmón es:
+		\[
+		P(F \cap C) = 0.2 \times 0.3 = 0.06
+		\]
+		
+		\section*{Eventos Independientes}
+		
+		\subsection*{Definición y Fórmula}
+		Dos eventos \( A \) y \( B \) son independientes si la ocurrencia de uno no afecta la probabilidad del otro, es decir, \( P(A \cap B) = P(A) \times P(B) \).
+		
+		\textbf{Ejemplo Práctico:}  
+		Al lanzar dos monedas, la probabilidad de que ambas salgan cara:
+		\[
+		P(\text{Cara}_1 \cap \text{Cara}_2) = P(\text{Cara}_1) \times P(\text{Cara}_2) = 
+		\]
+		\[
+		\frac{1}{2} \times \frac{1}{2} = \frac{1}{4}
+		\]
+		
+		\section*{Reglas de Conteo (Principio Multiplicativo)}
+		
+		\subsection*{Fórmula}
+		Si hay \( m \) maneras de realizar una primera acción y \( n \) maneras de realizar una segunda acción, entonces hay \( m \times n \) maneras de realizar ambas acciones.
+		
+		\textbf{Ejemplo Práctico:}  
+		Una persona tiene 3 camisas y 4 pantalones. ¿Cuántos conjuntos diferentes de camisa y pantalón puede formar?
+		\[
+		\text{Total de conjuntos} = 3 \times 4 = 12
+		\]
+		
+		\section*{Combinaciones}
+		
+		\subsection*{Fórmula}
+		\[
+		C(n, k) = \binom{n}{k} = \frac{n!}{k!(n - k)!}
+		\]
+		donde \( n! \) es el factorial de \( n \).
+		
+		\textbf{Ejemplo Práctico:}  
+		¿Cuántas formas hay de elegir 2 estudiantes de un grupo de 5 para formar un comité?
+		\[
+		C(5, 2) = \frac{5!}{2!(5 - 2)!} = \frac{120}{2 \times 6} = 10
+		\]
+		
+		\section*{Permutaciones}
+		
+		\subsection*{Fórmula}
+		\[
+		P(n, k) = \frac{n!}{(n - k)!}
+		\]
+		donde \( n! \) es el factorial de \( n \).
+		
+		\textbf{Ejemplo Práctico:}  
+		¿Cuántas formas hay de ordenar 3 libros diferentes de una estantería que contiene 5 libros?
+		\[
+		P(5, 3) = \frac{5!}{(5 - 3)!} = \frac{120}{2} = 60
+		\]
+		
+		\section*{Teorema de Bayes}
+		
+		\subsection*{Fórmula}
+		\[
+		P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}
+		\]
+		\textbf{Ejemplo Práctico:}  
+		Supongamos que en una población, el 1\% tiene una cierta enfermedad (\( P(E) = 0.01 \)). Se realiza una prueba que es positiva el 99\% de las veces que una persona está enferma (\( P(T|E) = 0.99 \)) y da un falso positivo el 5\% de las veces cuando una persona no está enferma (\( P(T|\neg E) = 0.05 \)). ¿Cuál es la probabilidad de que una persona esté enferma dado que la prueba es positiva (\( P(E|T) \))?
+		
+		Primero, calculamos \( P(T) \):
+		\[
+		P(T) = P(T|E)P(E) + P(T|\neg E)P(\neg E) = 
+		\]
+		\[
+		(0.99 \times 0.01) + (0.05 \times 0.99) = 0.0099 + 0.0495 = 0.0594
+		\]
+		
+		
+		Luego, aplicamos el teorema de Bayes:
+		\[
+		P(E|T) = \frac{0.99 \times 0.01}{0.0594} \approx \frac{0.0099}{0.0594} \approx 0.1667 \, (16.67\%)
+		\]
+	\end{multicols}
+	
+	\newpage
+	
+	\begin{multicols}{2}
+		
+		\section*{Variables aleatorias}
+		\textbf{Ejemplo:}  
+		Si lanzas un dado, la variable aleatoria $X$ puede ser el número que aparece en la cara superior. Aquí $X \in \{1,2,3,4,5,6\}$ y cada valor tiene la misma probabilidad $\frac{1}{6}$.
+		
+		\section*{Distribución Bernoulli}
+		\[
+		P(X=1)=p,\quad P(X=0)=1-p
+		\]
+		\textbf{Ejemplo:}  
+		Considera lanzar una moneda cargada con prob. $p=0.3$ de salir cara (éxito). Si definimos éxito = cara, entonces:
+		- $P(X=1)=0.3$  
+		- $P(X=0)=0.7$
+		
+		\section*{Distribución Binomial}
+		\[
+		P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}
+		\]
+		\textbf{Ejemplo:}  
+		Supón que haces 5 tiros al aro de baloncesto, cada uno con prob. de encestar $p=0.4$. La prob. de encestar exactamente $k=2$ veces es:
+		\[
+		P(X=2)=\binom{5}{2}(0.4)^2(0.6)^3
+		\]
+		
+		\section*{Distribución de Poisson}
+		\[
+		P(X=k)=\frac{\lambda^k e^{-\lambda}}{k!}
+		\]
+		\textbf{Ejemplo:}  
+		Si en promedio llegan $\lambda=3$ clientes por minuto a una tienda, la probabilidad de que lleguen exactamente $k=5$ clientes en el próximo minuto es:
+		\[
+		P(X=5)=\frac{3^5 e^{-3}}{5!}
+		\]
+		
+		\section*{Aproximación Poisson a Binomial}
+		\textbf{Ejemplo:}  
+		Si se tiene $n=1000$ artículos y cada uno tiene una prob. $p=0.001$ de ser defectuoso, entonces $np=\lambda=1$.  
+		La prob. de que exactamente 2 sean defectuosos se aproxima con Poisson:
+		\[
+		P(X=2)\approx\frac{1^2 e^{-1}}{2!}
+		\]
+		
+		\section*{Distribución Binomial Negativa}
+		\[
+		P(X=k)=\binom{k+r-1}{k}p^r(1-p)^k
+		\]
+		\textbf{Ejemplo:}  
+		Si esperas obtener $r=3$ éxitos en una serie de ensayos con $p=0.5$, la prob. de tener exactamente $k=4$ fracasos antes del 3er éxito es:
+		\[
+		P(X=4)=\binom{4+3-1}{4}(0.5)^3(0.5)^4
+		=\binom{6}{4}(0.5)^7
+		\]
+		
+		\section*{Función de Densidad (continua)}
+		\[
+		\int_{-\infty}^{\infty} f_X(x)dx=1
+		\]
+		\textbf{Ejemplo:}  
+		Si $X$ es uniforme entre 0 y 10, su densidad es $f_X(x)=\frac{1}{10-0}=0.1$. La prob. de que $X$ esté entre 2 y 5 es:
+		\[
+		\int_2^5 0.1 dx = 0.1 \times (5-2)=0.3.
+		\]
+		
+		\section*{Distribución Exponencial}
+		\[
+		f_X(x)=\lambda e^{-\lambda x}, x\ge0
+		\]
+		\textbf{Ejemplo:}  
+		Si el tiempo entre llegadas de autobuses tiene $\lambda=0.5$ (tiempo medio 2 min), la prob. de que el próximo autobús llegue en menos de 3 min es:
+		\[
+		P(X<3)=\int_0^3 0.5 e^{-0.5x}dx=1-e^{-0.5\times3}=1-e^{-1.5}
+		\]
+		
+		\section*{Distribución Uniforme}
+		\[
+		f_X(x)=\frac{1}{b-a}, a\le x\le b
+		\]
+		\textbf{Ejemplo:}  
+		Si $X$ está uniformemente distribuida entre 0 y 20, la prob. de que $X$ esté entre 5 y 10 es:
+		\[
+		\int_5^{10}\frac{1}{20}dx=\frac{10-5}{20}=0.25
+		\]
+		
+		\section*{Distribución Normal}
+		\[
+		f_X(x)=\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)
+		\]
+		\textbf{Ejemplo:}  
+		Si $X\sim N(\mu=100,\sigma=15)$, la prob. de que $X<110$ se calcula convirtiendo a puntaje Z:  
+		\[
+		Z=\frac{110-100}{15}=\frac{10}{15}\approx0.6667
+		\]
+		Usando tablas $P(Z<0.6667)\approx0.75$ (aprox.).
+		
+	\end{multicols}
+
+	
+	
+\end{document}
