@@ -1,0 +1,59 @@
+\documentclass{article}
+
+
+
+
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+
+% Paquetes útiles
+\usepackage[utf8]{inputenc}  % Codificación UTF-8
+\usepackage{amsmath}         % Soporte para fórmulas matemáticas
+\usepackage{graphicx}        % Para incluir imágenes
+\usepackage{hyperref}        % Para enlaces
+\usepackage{geometry}        % Configurar márgenes
+\geometry{a4paper, margin=2 cm}
+
+
+
+%Huge es para grande el titulo y bfseries para negritas
+
+\title{\Huge \bfseries Mi Primer Documento En Latex}
+\author{Ernesto Soria}
+\date{\today} % Fecha automática
+
+\begin{document}
+	
+	\maketitle % Genera título, autor y fecha
+	
+	
+	
+	
+	\begin{figure}[h] % h = aquí, t = arriba, b = abajo, p = página aparte
+		\centering
+		\includegraphics[width=1\textwidth]{cetilogo.png} % Ajusta el ancho de la imagen
+		\label{fig:ceti} % Permite referenciar la imagen con \ref{fig:ejemplo}
+	\end{figure}
+	
+	\begin{center}
+		{\LARGE \textbf{Centro de Enseñanza Técnica Industrial}} \\[2.5mm]
+		{\LARGE \textbf{Plantel Colomos}}\\
+	\end{center}
+	
+	\vspace{5mm} % Espaciado opcional
+	
+	\begin{flushleft}
+		{\large \textbf{Nombre:} Ernesto David Soria Ramos} \\[2mm]
+		{\large \textbf{Número de matrícula:} 23310003} \\[2mm]
+		{\large \textbf{Grado y grupo:} 4-N}\\[2mm]
+		{\large \textbf{Materia:} }\\[2mm]
+	\end{flushleft}
+	
+	\newpage
+	
+	
+	
+	
+	
+	
+\end{document}
