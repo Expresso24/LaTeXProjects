@@ -5,4 +5,5 @@
 *.fls
 *.fdb_latexmk
 *.pdf  
+*.out
 #Evita subir PDFs generados automáticamente
