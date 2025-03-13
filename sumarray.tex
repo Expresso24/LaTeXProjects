@@ -1,0 +1,183 @@
+\documentclass{article}
+
+
+
+
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+
+% Paquetes útiles
+\usepackage[utf8]{inputenc}  % Codificación UTF-8
+\usepackage{amsmath}         % Soporte para fórmulas matemáticas
+\usepackage{graphicx}        % Para incluir imágenes
+\usepackage{hyperref}        % Para enlaces
+\usepackage{geometry}        % Configurar márgenes
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\geometry{a4paper, margin=2 cm}
+
+
+
+%Huge es para grande el titulo y bfseries para negritas
+
+\title{\Huge \bfseries Sum Array}
+\author{Ernesto Soria}
+\date{\today} % Fecha automática
+
+
+\begin{document}
+	
+	\maketitle % Genera título, autor y fecha
+	
+	
+	
+	
+	\begin{figure}[h] % h = aquí, t = arriba, b = abajo, p = página aparte
+		\centering
+		\includegraphics[width=1\textwidth]{cetilogo.png} % Ajusta el ancho de la imagen
+		\label{fig:ceti} % Permite referenciar la imagen con \ref{fig:ejemplo}
+	\end{figure}
+	
+	\begin{center}
+		{\LARGE \textbf{Centro de Enseñanza Técnica Industrial}} \\[2.5mm]
+		{\LARGE \textbf{Plantel Colomos}}\\
+	\end{center}
+	
+	\vspace{5mm} % Espaciado opcional
+	
+	\begin{flushleft}
+		{\large \textbf{Nombre:} Ernesto David Soria Ramos} \\[2mm]
+		{\large \textbf{Número de matrícula:} 23310003} \\[2mm]
+		{\large \textbf{Grado y grupo:} 4-N}\\[2mm]
+		{\large \textbf{Materia:} Estructura de datos y algoritmia }\\[2mm]
+	\end{flushleft}
+	
+	\newpage
+	
+	
+	\section{Análisis del Algoritmo y Código}
+
+	
+	El código funciona de la siguiente manera:
+	
+	\begin{itemize}
+		\item Se inicializa el mínimo con el primer elemento del arreglo.
+		\item Se recorre el resto del arreglo una vez (desde el segundo elemento hasta el último).
+		\item En cada iteración, se compara el elemento actual con el mínimo.
+		\item Si el valor actual es menor, se actualiza el mínimo.
+		\item Al finalizar el recorrido, se devuelve el mínimo encontrado.
+	\end{itemize}
+	
+	Este método se basa en una sola iteración sobre el arreglo, lo que nos permite analizar su complejidad computacional.
+	
+	\section{Notaciones Asintóticas (O, $\Omega$, $\Theta$)}
+	
+	Para analizar la eficiencia del algoritmo, examinemos los diferentes escenarios de ejecución:
+	
+	\subsection*{Complejidad en el peor caso (Big O)}
+	La notación Big O (O) describe el límite superior del tiempo de ejecución del algoritmo en el peor de los casos.
+	
+	\begin{itemize}
+		\item En el peor caso, el algoritmo siempre recorrerá todo el arreglo de tamaño $ n $.
+		\item Se realizan $ n-1 $ comparaciones en total.
+		\item Como resultado, la complejidad en el peor caso es:
+	\end{itemize}
+	
+	\[
+	O(n)
+	\]
+	
+	\subsection*{Complejidad en el mejor caso (Big $\Omega$)}
+	La notación Big Omega ($\Omega$) representa el límite inferior del tiempo de ejecución, es decir, el mejor de los casos.
+	
+	\begin{itemize}
+		\item En el mejor caso, el mínimo está en la primera posición del arreglo.
+		\item Sin embargo, el algoritmo sigue recorriendo todo el arreglo para asegurarse de que no haya un valor menor.
+		\item Dado que no hay una terminación anticipada, el algoritmo siempre recorre todo el arreglo, incluso en el mejor caso.
+	\end{itemize}
+	
+	\[
+	\Omega(n)
+	\]
+	
+	\subsection*{Complejidad en el caso promedio (Big $\Theta$)}
+	La notación Big Theta ($\Theta$) describe el comportamiento de la función cuando el tiempo de ejecución es proporcional a $ n $ tanto en el peor como en el mejor caso.
+	
+	\begin{itemize}
+		\item Como hemos visto, el algoritmo recorre el arreglo sin importar el orden de los valores.
+		\item No importa si el mínimo está al inicio o al final, el bucle siempre ejecuta $ n-1 $ iteraciones.
+		\item Esto significa que la complejidad en el caso promedio también es lineal.
+	\end{itemize}
+	
+	\[
+	\Theta(n)
+	\]
+	
+	\section{3. Escenarios de Ejecución del Algoritmo}
+	
+	\subsection*{Mejor Caso}
+	\begin{itemize}
+		\item Ocurre cuando el primer elemento del arreglo ya es el menor.
+		\item Sin embargo, el algoritmo aún necesita recorrer todo el arreglo para confirmar que no hay un valor menor.
+		\item Tiempo de ejecución: $ O(n) $, ya que sigue recorriendo todo el arreglo.
+	\end{itemize}
+	
+	\subsection*{Peor Caso}
+	\begin{itemize}
+		\item Ocurre cuando el elemento mínimo está en la última posición del arreglo.
+		\item En este caso, el algoritmo hace la máxima cantidad de comparaciones posibles.
+		\item Tiempo de ejecución: $ O(n) $, igual que en el mejor caso, porque el algoritmo no tiene una condición para detenerse antes.
+	\end{itemize}
+	
+	\subsection*{Caso Promedio}
+	\begin{itemize}
+		\item En el caso promedio, el mínimo puede estar en cualquier posición con igual probabilidad.
+		\item Sin embargo, dado que el algoritmo recorre todo el arreglo sin importar la distribución de valores, el tiempo de ejecución sigue siendo proporcional a $ n $.
+		\item Tiempo de ejecución: $ \Theta(n) $.
+	\end{itemize}
+	
+	\section{Conclusiones}
+	
+	\begin{itemize}
+		\item Eficiencia:
+		\begin{itemize}
+			\item Este algoritmo es óptimo para encontrar el mínimo en un arreglo desordenado en tiempo lineal $ O(n) $.
+			\item No puede ser más eficiente sin suponer información previa sobre el arreglo.
+		\end{itemize}
+		
+		\item Limitaciones:
+		\begin{itemize}
+			\item No hay una forma de reducir el tiempo de ejecución porque no hay cortes anticipados en el bucle.
+			\item Aun si el primer número fuera el menor, el algoritmo aún recorre el arreglo completo.
+		\end{itemize}
+		
+		\item Aplicaciones:
+		\begin{itemize}
+			\item Se usa en algoritmos más complejos como ordenamientos, búsquedas optimizadas y problemas de optimización.
+			\item Es útil cuando no se puede asumir un orden previo en los datos.
+		\end{itemize}
+	\end{itemize}
+	
+	\section{Resumen de Complejidades}
+	
+	\begin{center}
+		\begin{tabular}{ |c|c|c| }
+			\hline
+			Caso & Notación & Complejidad \\
+			\hline
+			Mejor Caso & $ \Omega(n) $ & Recorre todo el arreglo \\
+			\hline
+			Peor Caso & $ O(n) $ & Recorre todo el arreglo \\
+			\hline
+			Caso Promedio & $ \Theta(n) $ & Tiempo lineal \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	En conclusión, el algoritmo de búsqueda del mínimo en un arreglo siempre tiene complejidad lineal ($ O(n) $, $ \Omega(n) $ y $ \Theta(n) $). No puede mejorarse en su forma actual sin información adicional sobre el arreglo.
+	
+	
+	
+\end{document}

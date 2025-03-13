@@ -1,0 +1,127 @@
+\documentclass{article}
+
+
+
+
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+
+% Paquetes útiles
+\usepackage[utf8]{inputenc}  % Codificación UTF-8
+\usepackage{amsmath}         % Soporte para fórmulas matemáticas
+\usepackage{graphicx}        % Para incluir imágenes
+\usepackage{hyperref}        % Para enlaces
+\usepackage{geometry}        % Configurar márgenes
+\usepackage{booktabs}
+\geometry{a4paper, margin=2 cm}
+
+
+
+%Huge es para grande el titulo y bfseries para negritas
+
+\title{\Huge \bfseries Matrix Multiplication}
+\author{Ernesto Soria}
+\date{\today} % Fecha automática
+
+\begin{document}
+	
+	\maketitle % Genera título, autor y fecha
+	
+	
+	
+	
+	\begin{figure}[h] % h = aquí, t = arriba, b = abajo, p = página aparte
+		\centering
+		\includegraphics[width=1\textwidth]{cetilogo.png} % Ajusta el ancho de la imagen
+		\label{fig:ceti} % Permite referenciar la imagen con \ref{fig:ejemplo}
+	\end{figure}
+	
+	\begin{center}
+		{\LARGE \textbf{Centro de Enseñanza Técnica Industrial}} \\[2.5mm]
+		{\LARGE \textbf{Plantel Colomos}}\\
+	\end{center}
+	
+	\vspace{5mm} % Espaciado opcional
+	
+	\begin{flushleft}
+		{\large \textbf{Nombre:} Ernesto David Soria Ramos} \\[2mm]
+		{\large \textbf{Número de matrícula:} 23310003} \\[2mm]
+		{\large \textbf{Grado y grupo:} 4-N}\\[2mm]
+		{\large \textbf{Materia:} }\\[2mm]
+	\end{flushleft}
+	
+	\newpage
+	
+	
+	\section{Introducción}
+	La multiplicación de matrices es una operación fundamental en álgebra lineal y se encuentra en múltiples aplicaciones como gráficos por computadora, inteligencia artificial y simulaciones científicas. En este análisis, evaluaremos el algoritmo en términos de su \textbf{complejidad computacional}, explorando su comportamiento en el mejor y peor caso, y estableciendo sus notaciones asintóticas \textbf{(Big-O, Big-\(\Omega\) y Big-\(\Theta\))}.
+	
+	\section{Funcionamiento del Algoritmo}
+	El código implementa la multiplicación de dos matrices \( A \) y \( B \) siguiendo la definición matemática:
+	\[
+	C[i][j] = \sum_{k=0}^{m-1} A[i][k] \times B[k][j]
+	\]
+	
+	Donde:
+	\begin{itemize}
+		\item \( A \) es una matriz de tamaño \( n \times m \)
+		\item \( B \) es una matriz de tamaño \( m \times p \)
+		\item \( C \) es la matriz resultante de tamaño \( n \times p \)
+	\end{itemize}
+	
+	El algoritmo usa \textbf{tres bucles anidados}:
+	\begin{enumerate}
+		\item Iterar sobre las filas de \( A \) (bucle externo).
+		\item Iterar sobre las columnas de \( B \) (segundo bucle).
+		\item Sumar los productos de los elementos correspondientes (bucle interno).
+	\end{enumerate}
+	Cada elemento de la matriz \( C \) se obtiene realizando \( m \) multiplicaciones y sumas.
+	
+	\section{Complejidad Asintótica}
+	La complejidad del algoritmo se puede analizar mediante las \textbf{notaciones asintóticas}:
+	
+	\subsection*{Peor Caso (Notación Big-O)}
+	La notación \textbf{Big-O (\(O\))} describe el límite superior del tiempo de ejecución. En este caso, el algoritmo siempre ejecuta \( n \times p \times m \) operaciones debido a los \textbf{tres bucles anidados}, lo que nos da:
+	\[
+	O(n \cdot m \cdot p)
+	\]
+	Esto significa que el tiempo de ejecución \textbf{crece cúbicamente} con el tamaño de las matrices.
+	
+	\subsection*{Mejor Caso (\(\Omega\))}
+	La notación \textbf{Big-\(\Omega\)} describe el límite inferior del tiempo de ejecución. Dado que cada entrada de la matriz \( C \) debe calcularse sin importar los valores de \( A \) y \( B \), el mejor caso también tiene la misma complejidad:
+	\[
+	\Omega(n \cdot m \cdot p)
+	\]
+	No hay manera de evitar los cálculos para cada celda de la matriz resultante.
+	
+	\subsection*{Caso Promedio (\(\Theta\))}
+	La notación \textbf{Big-\(\Theta\)} define el comportamiento promedio del algoritmo. Como siempre realiza \( n \times m \times p \) operaciones, tenemos:
+	\[
+	\Theta(n \cdot m \cdot p)
+	\]
+	Esto indica que la cantidad de operaciones \textbf{no varía en función de los datos de entrada}, solo del tamaño de las matrices.
+	
+	\section{Comparación entre Mejor y Peor Caso}
+	\begin{center}
+		\begin{tabular}{ l c c }
+			\toprule
+			\textbf{Caso} & \textbf{Notación} & \textbf{Complejidad} \\
+			\midrule
+			Mejor caso & \(\Omega(n \cdot m \cdot p)\) & Siempre multiplica y suma para cada elemento de la matriz. \\
+			Peor caso & \(O(n \cdot m \cdot p)\) & No hay forma de hacer menos operaciones sin optimizar el método. \\
+			Caso promedio & \(\Theta(n \cdot m \cdot p)\) & Igual al peor caso, ya que el número de operaciones es fijo. \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	
+
+	
+	\section{Conclusión}
+	El algoritmo de multiplicación de matrices clásico tiene una complejidad de \( O(n \cdot m \cdot p) \) en todos los casos. No hay mejoras en el mejor caso, ya que la cantidad de cálculos siempre es la misma. Sin embargo, métodos avanzados como \textbf{Strassen} pueden reducir el número de operaciones, lo cual es útil para matrices grandes.
+	
+	Si se trabaja con \textbf{matrices pequeñas}, este algoritmo es suficiente. Para \textbf{matrices grandes}, es recomendable explorar métodos más eficientes para optimizar el rendimiento.
+	
+	
+\end{document}
+
+

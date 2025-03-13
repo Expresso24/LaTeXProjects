@@ -1,0 +1,110 @@
+\documentclass{article}
+
+
+
+
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+
+% Paquetes útiles
+\usepackage[utf8]{inputenc}  % Codificación UTF-8
+\usepackage{amsmath}         % Soporte para fórmulas matemáticas
+\usepackage{graphicx}        % Para incluir imágenes
+\usepackage{hyperref}        % Para enlaces
+\usepackage{geometry}        % Configurar márgenes
+\geometry{a4paper, margin=2 cm}
+
+
+
+%Huge es para grande el titulo y bfseries para negritas
+
+\title{\Huge \bfseries BubbleSort}
+\author{Ernesto Soria}
+\date{\today} % Fecha automática
+
+\begin{document}
+	
+	\maketitle % Genera título, autor y fecha
+	
+	
+	
+	
+	\begin{figure}[h] % h = aquí, t = arriba, b = abajo, p = página aparte
+		\centering
+		\includegraphics[width=1\textwidth]{cetilogo.png} % Ajusta el ancho de la imagen
+		\label{fig:ceti} % Permite referenciar la imagen con \ref{fig:ejemplo}
+	\end{figure}
+	
+	\begin{center}
+		{\LARGE \textbf{Centro de Enseñanza Técnica Industrial}} \\[2.5mm]
+		{\LARGE \textbf{Plantel Colomos}}\\
+	\end{center}
+	
+	\vspace{5mm} % Espaciado opcional
+	
+	\begin{flushleft}
+		{\large \textbf{Nombre:} Ernesto David Soria Ramos} \\[2mm]
+		{\large \textbf{Número de matrícula:} 23310003} \\[2mm]
+		{\large \textbf{Grado y grupo:} 4-N}\\[2mm]
+		{\large \textbf{Materia:} Estructura de datos y algoritmia }\\[2mm]
+	\end{flushleft}
+	
+	\newpage
+	
+	
+
+
+		\section{Introducción}
+		El algoritmo de ordenamiento por burbuja (Bubble Sort) es un método simple para ordenar un arreglo. Compara pares de elementos adyacentes e intercambia los que están en el orden incorrecto. Este proceso se repite hasta que el arreglo está ordenado.
+		
+		\section{Análisis del Código}
+		El código en Java sigue estos pasos:
+		\begin{enumerate}
+			\item Se define un arreglo desordenado con valores de ejemplo.
+			\item Se implementa la función bubbleSort, que:
+			\begin{itemize}
+				\item Recorre el arreglo varias veces.
+				\item Compara elementos adyacentes e intercambia si es necesario.
+				\item En cada iteración, el elemento más grande se mueve a su posición correcta.
+			\end{itemize}
+			\item Se imprime el arreglo ordenado al final.
+		\end{enumerate}
+		
+		\section{Complejidad del Algoritmo}
+		\subsection*{Peor caso: \(O(n^2)\)}
+		Si el arreglo está en orden inverso, se necesitan muchas comparaciones e intercambios:
+		\begin{equation}
+			O(n^2)
+		\end{equation}
+		
+		\subsection*{Mejor caso: \(\Omega(n)\)}
+		Si el arreglo ya está ordenado, solo se realiza una pasada sin intercambios:
+		\begin{equation}
+			\Omega(n)
+		\end{equation}
+		
+		\subsection*{Caso promedio: \(\Theta(n^2)\)}
+		En la mayoría de los casos, se requieren comparaciones e intercambios múltiples:
+		\begin{equation}
+			\Theta(n^2)
+		\end{equation}
+		
+		\section{Desventajas del Algoritmo}
+		\begin{itemize}
+			\item Es ineficiente para arreglos grandes.
+			\item Realiza muchos intercambios innecesarios.
+			\item Existen algoritmos más rápidos como QuickSort \(O(n \log n)\) o MergeSort \(O(n \log n)\).
+		\end{itemize}
+		
+		\section{Conclusión}
+		El algoritmo Bubble Sort es fácil de entender pero poco eficiente. Su complejidad \(O(n^2)\) lo hace poco recomendable para datos grandes, aunque sigue siendo útil con fines educativos.
+		
+
+	
+	
+	
+	
+	
+	
+	
+\end{document}

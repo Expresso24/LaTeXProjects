@@ -1,0 +1,127 @@
+\documentclass{article}
+
+
+
+
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+
+% Paquetes útiles
+\usepackage[utf8]{inputenc}  % Codificación UTF-8
+\usepackage{amsmath}         % Soporte para fórmulas matemáticas
+\usepackage{graphicx}        % Para incluir imágenes
+\usepackage{hyperref}        % Para enlaces
+\usepackage{geometry}        % Configurar márgenes
+\usepackage{booktabs}
+\geometry{a4paper, margin=2 cm}
+
+
+
+%Huge es para grande el titulo y bfseries para negritas
+
+\title{\Huge \bfseries Check Duplicate}
+\author{Ernesto Soria}
+\date{\today} % Fecha automática
+
+\begin{document}
+	
+	\maketitle % Genera título, autor y fecha
+	
+	
+	
+	
+	\begin{figure}[h] % h = aquí, t = arriba, b = abajo, p = página aparte
+		\centering
+		\includegraphics[width=1\textwidth]{cetilogo.png} % Ajusta el ancho de la imagen
+		\label{fig:ceti} % Permite referenciar la imagen con \ref{fig:ejemplo}
+	\end{figure}
+	
+	\begin{center}
+		{\LARGE \textbf{Centro de Enseñanza Técnica Industrial}} \\[2.5mm]
+		{\LARGE \textbf{Plantel Colomos}}\\
+	\end{center}
+	
+	\vspace{5mm} % Espaciado opcional
+	
+	\begin{flushleft}
+		{\large \textbf{Nombre:} Ernesto David Soria Ramos} \\[2mm]
+		{\large \textbf{Número de matrícula:} 23310003} \\[2mm]
+		{\large \textbf{Grado y grupo:} 4-N}\\[2mm]
+		{\large \textbf{Materia:} Estructura de datos y algoritmia }\\[2mm]
+	\end{flushleft}
+	
+	\newpage
+	
+	
+	\section{Descripción del Algoritmo}
+	El algoritmo que hemos implementado utiliza una estructura de datos llamada \texttt{HashSet} para detectar si un arreglo contiene elementos duplicados. La idea principal es recorrer el arreglo y, por cada elemento, verificar si ya ha sido visto antes utilizando el \texttt{HashSet}. Si encontramos un número repetido, retornamos \texttt{true}; de lo contrario, seguimos recorriendo hasta completar el array y retornar \texttt{false} si no hay duplicados.
+	
+	\section{Análisis de Complejidad Asintótica}
+	Para evaluar el rendimiento del algoritmo en diferentes escenarios, usamos las notaciones de complejidad Big-O ($O$), Big-Omega ($\Omega$) y Big-Theta ($\Theta$).
+	
+	\subsection{Peor Caso ($O$)}
+	\begin{itemize}
+		\item En el peor caso, debemos recorrer todo el arreglo y almacenar cada elemento en el \texttt{HashSet}. Esto ocurre cuando no hay duplicados en el array, por lo que nunca se ejecuta el \texttt{return true} antes del final.
+		\item La inserción y la búsqueda en un \texttt{HashSet} tienen un costo promedio de $O(1)$, pero en el peor caso, debido a colisiones en la tabla hash, estas operaciones podrían ser $O(n)$.
+		\item Entonces, en el peor de los casos, la complejidad del algoritmo es:
+	\end{itemize}
+	\begin{equation}
+		O(n)
+	\end{equation}
+	
+	\subsection{Mejor Caso ($\Omega$)}
+	\begin{itemize}
+		\item El mejor caso ocurre cuando encontramos un duplicado en las primeras posiciones del arreglo. En este escenario, el algoritmo no necesita recorrer todo el array y puede detenerse antes.
+		\item Supongamos que el primer número se repite en la segunda posición. En este caso, realizamos solo dos operaciones de inserción/búsqueda en el \texttt{HashSet}, lo que toma $O(1)$.
+		\item Por lo tanto, el límite inferior de la complejidad es:
+	\end{itemize}
+	\begin{equation}
+		\Omega(1)
+	\end{equation}
+	
+	\subsection{Caso Promedio y Límite Ajustado ($\Theta$)}
+	\begin{itemize}
+		\item En el caso promedio, la mayoría de los elementos serán únicos hasta cierto punto antes de encontrar un duplicado o llegar al final del arreglo.
+		\item Como la inserción y búsqueda en un \texttt{HashSet} son aproximadamente $O(1)$ en promedio, recorrer un arreglo de tamaño $n$ nos lleva a una complejidad de $O(n)$ en la mayoría de los casos.
+		\item Dado que el peor caso y el caso promedio tienen la misma complejidad, podemos decir que la complejidad ajustada es:
+	\end{itemize}
+	\begin{equation}
+		\Theta(n)
+	\end{equation}
+	
+	\section{Comparación de los Casos}
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{lll}
+			\toprule
+			\textbf{Caso} & \textbf{Descripción} & \textbf{Complejidad} \\
+			\midrule
+			Mejor Caso ($\Omega$) & Se encuentra un duplicado al inicio del recorrido. & $\Omega(1)$ \\
+			Caso Promedio ($\Theta$) & Se recorren la mayoría de los elementos antes de encontrar un duplicado. & $\Theta(n)$ \\
+			Peor Caso ($O$) & No hay duplicados, y se recorren todos los elementos. & $O(n)$ \\
+			\bottomrule
+		\end{tabular}
+		\caption{Comparación de complejidades en distintos escenarios.}
+	\end{table}
+	
+	En resumen:
+	\begin{itemize}
+		\item \textbf{El mejor caso es muy eficiente} y ocurre si encontramos un duplicado rápidamente.
+		\item \textbf{El caso promedio y el peor caso tienen la misma complejidad $O(n)$} porque el recorrido del arreglo sigue siendo lineal.
+		\item \textbf{El peor caso ocurre cuando todos los elementos son únicos}, obligándonos a recorrer todo el arreglo.
+	\end{itemize}
+	
+	\section{Conclusión}
+	Este algoritmo es una solución eficiente para verificar duplicados en un arreglo gracias al uso de \texttt{HashSet}, que reduce el tiempo de búsqueda y almacenamiento en comparación con métodos menos eficientes como la comparación de cada elemento con todos los demás ($O(n^2)$).
+	
+	Sin embargo, el uso de memoria adicional $O(n)$ puede ser una desventaja si el espacio es limitado. Si la memoria es una preocupación, podríamos optar por enfoques alternativos como ordenar el arreglo primero ($O(n \log n)$) y luego verificar duplicados en una sola pasada ($O(n)$), reduciendo el uso de memoria a $O(1)$.
+	
+	Este análisis muestra que el algoritmo es bastante óptimo para la mayoría de los casos, especialmente cuando necesitamos una solución rápida en $O(n)$.
+	
+	
+	
+	
+	
+	
+	
+\end{document}
